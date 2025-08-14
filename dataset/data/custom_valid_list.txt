@@ -1,0 +1,2 @@
+TruFor_train_test/custom_dataset/valid/images/c8tf5mq_0.png TruFor_train_test/custom_dataset/valid/masks/c8tf5mq_0_mask.png
+TruFor_train_test/custom_dataset/valid/images/c8ua0at_0.jpg TruFor_train_test/custom_dataset/valid/masks/c8ua0at_0_mask.png
