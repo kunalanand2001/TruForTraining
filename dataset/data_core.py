@@ -52,7 +52,7 @@ class myDataset(Dataset):
                 self.dataset_list.append(compRAISE(crop_size, grid_crop, "dataset/data/compRAISE_train.txt", aug=aug))
             
             if 'CUSTOM' in training_set:
-                self.dataset_list.append(DatasetCustom(crop_size, grid_crop, "dataset/data/custom_train.txt", aug=aug))
+                self.dataset_list.append(DatasetCustom(crop_size, grid_crop, "dataset/data/custom_train_list.txt", aug=aug))
 
 
         elif mode == "valid":
@@ -77,7 +77,7 @@ class myDataset(Dataset):
                 self.dataset_list.append(compRAISE(crop_size, grid_crop, "dataset/data/compRAISE_valid.txt", max_dim=max_dim, aug=aug))
 
             if 'CUSTOM' in valid_set:
-                self.dataset_list.append(DatasetCustom(crop_size, grid_crop, "dataset/data/custom_valid.txt", max_dim=max_dim, aug=aug))
+                self.dataset_list.append(DatasetCustom(crop_size, grid_crop, "dataset/data/custom_valid_list.txt", max_dim=max_dim, aug=aug))
 
         else:
             raise KeyError("Invalid mode: " + mode)

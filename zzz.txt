@@ -1,0 +1,10 @@
+conda activate trufor
+
+python train.py -exp custom_finetune_ph2
+python train.py -exp custom_finetune_ph3
+
+
+python test2.py -in testImagesInput -out testImagesOutput -exp trufor_ph3 TEST.MODEL_FILE "pretrained_models/trufor.pth.tar"
+python test2.py -in testImagesInput -out testImagesOutput -exp custom_finetune_ph3 TEST.MODEL_FILE "weights/custom_finetune_ph3/checkpoint.pth.tar"
+
+python visualize.py --image testImagesInput/tampered2.png --output OUTPUTS/ct,ct/tampered2.png.npz

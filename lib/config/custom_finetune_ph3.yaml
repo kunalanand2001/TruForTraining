@@ -2,7 +2,7 @@ CUDNN:
   BENCHMARK: false
   DETERMINISTIC: false
   ENABLED: false
-WORKERS: 16
+WORKERS: 1
 
 DATASET:
   TRAIN: ['CUSTOM']
@@ -32,10 +32,10 @@ LOSS:
 TRAIN:
   PRETRAINING: 'weights/custom_finetune_ph2/best.pth.tar'
   IMAGE_SIZE: [512,512]
-  BATCH_SIZE_PER_GPU: 18
+  BATCH_SIZE_PER_GPU: 1
   SHUFFLE: true
   BEGIN_EPOCH: 0
-  END_EPOCH: 100
+  END_EPOCH: 10
   OPTIMIZER: sgd
   LR: 0.005
   WD: 0.0005

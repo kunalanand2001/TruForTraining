@@ -261,9 +261,16 @@ def validate(config, testloader, model, writer_dict, valid_set="valid"):
         metric_dict['avg_mIoU_CONF']        = c_avg_mIoU.average()
         metric_dict['avg_mIoU_smooth_CONF'] = c_avg_mIoU_s.average()
 
+    # for metric in metric_dict:
+    #     writer.add_scalar(valid_set + '_' + metric, metric_dict[metric], global_steps)
     for metric in metric_dict:
-        writer.add_scalar(valid_set + '_' + metric, metric_dict[metric], global_steps)
+        value = metric_dict[metric]
+        if value is not None:
+            writer.add_scalar(valid_set + '_' + metric, value, global_steps)
+        else:
+            print(f"[Warning] Metric {metric} is None at step {global_steps}, skipping logging.")
 
+    
     writer_dict['valid_global_steps'] = global_steps + 1
 
     return metric_dict, IoU_array, confusion_matrix

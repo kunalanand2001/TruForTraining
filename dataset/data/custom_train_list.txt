@@ -1,4 +1,4 @@
-TruFor_train_test/custom_dataset/train/images/00099_fake.jpg TruFor_train_test/custom_dataset/train/masks/00099_fake_mask.png
-TruFor_train_test/custom_dataset/train/images/00107_fake.jpg TruFor_train_test/custom_dataset/train/masks/00107_fake_mask.png
-TruFor_train_test/custom_dataset/train/images/00109_fake.jpg TruFor_train_test/custom_dataset/train/masks/00109_fake_mask.png
-TruFor_train_test/custom_dataset/train/images/c8tt7fg_0.jpg TruFor_train_test/custom_dataset/train/masks/c8tt7fg_0_mask.png
+custom_dataset/train/images/00099_fake.jpg custom_dataset/train/masks/00099_fake_mask.png
+custom_dataset/train/images/00107_fake.jpg custom_dataset/train/masks/00107_fake_mask.png
+custom_dataset/train/images/00109_fake.jpg custom_dataset/train/masks/00109_fake_mask.png
+custom_dataset/train/images/c8tt7fg_0.jpg custom_dataset/train/masks/c8tt7fg_0_mask.png
