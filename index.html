@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Model Training</title>
+</head>
+<body>
+    <h1>Model Training</h1>
+    <button id="trainButton">Start Training</button>
+    <div id="status"></div>
+
+    <script>
+        document.getElementById("trainButton").addEventListener("click", function() {
+            document.getElementById("status").innerHTML = "Starting Phase 2 training...";
+            fetch('/train_phase2', {
+                method: 'POST',
+            })
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById("status").innerHTML = data.message;
+                if (data.message.includes("successfully")) {
+                    document.getElementById("status").innerHTML = "Phase 2 finished. Starting Phase 3 training...";
+                    return fetch('/train_phase3', {
+                        method: 'POST',
+                    });
+                } else {
+                    throw new Error("Phase 2 training failed.");
+                }
+            })
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById("status").innerHTML = data.message;
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                document.getElementById("status").innerHTML = "An error occurred: " + error.message;
+            });
+        });
+    </script>
+</body>
+</html>

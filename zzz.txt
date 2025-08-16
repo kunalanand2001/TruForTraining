@@ -8,3 +8,5 @@ python test2.py -in testImagesInput -out testImagesOutput -exp trufor_ph3 TEST.M
 python test2.py -in testImagesInput -out testImagesOutput -exp custom_finetune_ph3 TEST.MODEL_FILE "weights/custom_finetune_ph3/checkpoint.pth.tar"
 
 python visualize.py --image testImagesInput/tampered2.png --output OUTPUTS/ct,ct/tampered2.png.npz
+
+uvicorn api:app --reload
